@@ -123,9 +123,9 @@ def preprocessing_text(text: str):
 
 
 def preprocessing(df: pd.DataFrame):
-    df["sentence"] = [
-        preprocessing_text(row["sentence"]) for idx, row in df.iterrows()
-    ]
+    for idx, row in df.iterrows():
+        df.loc[idx, "sentence"] = preprocessing_text(row["sentence"])
+
     return df
 
 
