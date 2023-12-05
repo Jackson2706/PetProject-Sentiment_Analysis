@@ -45,6 +45,8 @@ def train(
 
         epoch_acc = total_acc / total_count
         epoch_loss = sum(losses) / len(losses)
+        epoch_acc_list.append(epoch_acc)
+        epoch_loss_list.append(epoch_loss)
     epoch_acc = sum(epoch_acc_list) / len(epoch_acc_list)
     epoch_loss = sum(epoch_loss_list) / len(epoch_loss_list)
     return epoch_acc, epoch_loss
